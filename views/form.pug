@@ -3,7 +3,19 @@ extends layout
 block content
   h1= title
   
-  form(action="/new", method="post") 
+  form(action="/new", method="post")
+    label(for="messageAuthor") 
+    | Author  
     input(type="text", name="messageAuthor")
+    
+    br
+    br
+    
+    label(for="messageText") 
+    | Message  
     input(type="text", name="messageText")
+    
+    br
+    br
+    
     button(type="submit") submit message

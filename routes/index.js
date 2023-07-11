@@ -21,12 +21,12 @@ router.get('/', function(req, res, next) {
 });
 
 router.get('/new', function(req, res, next){
-  // res.send("ADD A NEW MESSAGE")
   res.render('form', { title: "Add Message"})
 })
 
 router.post('/new',function(req, res, next){
-  messages.push({text: messageText, user: messageAuthor, added: DateTime.now().toLocaleString(DateTime.DATETIME_MED)})
+  messages.push({text: req.body.messageText, user: req.body.messageAuthor, added: DateTime.now().toLocaleString(DateTime.DATETIME_MED)})
+  res.redirect('/')
 } )
 
 module.exports = router;

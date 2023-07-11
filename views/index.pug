@@ -4,6 +4,8 @@ block content
   h1= title
   p Welcome to #{title}
 
+  a(href="/new") post message 
+
   ul
     each msg in messages
       li #{msg.user} - #{msg.added}
