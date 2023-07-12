@@ -11,7 +11,7 @@ exports.index = asyncHandler(async (req, res, next) => {
 
 exports.msg_list = asyncHandler(async (req, res, next) => {
     const allMsgs = await Msg.find({}, "text user added")
-        .sort({added: 1 })
+        .sort({added: -1 })
         .exec();
     
     res.render("index", {title: "msgboard", messages: allMsgs})
