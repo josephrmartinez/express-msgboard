@@ -1,6 +1,6 @@
 const Msg = require("../models/message");
 
-const { body, validationResult } = require("express-validator");
+// const { body, validationResult } = require("express-validator");
 const asyncHandler = require("express-async-handler");
 
 exports.index = asyncHandler(async (req, res, next) => {
