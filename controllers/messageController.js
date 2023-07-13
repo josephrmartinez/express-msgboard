@@ -17,7 +17,17 @@ exports.msg_list = asyncHandler(async (req, res, next) => {
 })
 
 exports.delete_msg = asyncHandler(async (req, res, next) => {
-    console.log(req.params.id)
+    
     await Msg.findByIdAndDelete(req.params.id);
         res.redirect('/')
+})
+
+exports.post_msg = asyncHandler(async (req, res, next) => {
+    const message = new Msg({
+        text: req.body.messageText,
+        user: req.body.messageAuthor,
+        added: new Date()
+    })
+    await message.save();
+    res.redirect('/')
 })
