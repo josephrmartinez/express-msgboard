@@ -4,9 +4,14 @@ block content
   h1= title
   p Welcome to #{title}
 
-  a(href="/new") post message 
+  a(href="/new")
+    span post message 
 
   ul
     each msg in messages
-      li #{msg.user} - #{msg.date_formatted}
+      li(style="list-style-type: none")
+        span #{msg.user} - #{msg.date_formatted} - 
+        a(href="/:id/delete") x
         p #{msg.text}
+        br
+        br
