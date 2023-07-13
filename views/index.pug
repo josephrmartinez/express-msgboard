@@ -11,7 +11,8 @@ block content
     each msg in messages
       li(style="list-style-type: none")
         span #{msg.user} - #{msg.date_formatted} - 
-        a(href="/:id/delete") x
+        a(href=msg._id + '/delete') x
         p #{msg.text}
+        p #{msg._id}
         br
         br

@@ -13,5 +13,6 @@ MsgSchema.virtual("date_formatted").get(function (){
     return DateTime.fromJSDate(this.added).toLocaleString(DateTime.DATE_MED)
 })
 
+
 // Export model
 module.exports = mongoose.model("Msg", MsgSchema)
